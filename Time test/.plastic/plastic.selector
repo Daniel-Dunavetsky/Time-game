@@ -1,4 +1,0 @@
-repository "Time gane@Eevi0n@cloud"
-  path "/"
-    br "/main"
-    co "/main"
