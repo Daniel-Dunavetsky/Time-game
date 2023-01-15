@@ -626,6 +626,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
+  walkingRightCheck: 0
+  walkingLeftCheck: 0
 --- !u!50 &2036356940
 Rigidbody2D:
   serializedVersion: 4

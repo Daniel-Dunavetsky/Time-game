@@ -2,18 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
-    private Rigidbody2D RB;
+    private Rigidbody2D rb;
+
+
+    //variables for animation
+    private Animation anim;
+    public bool walkingRightCheck;
+    public bool walkingLeftCheck;
 
     Vector2 movement;
 
     // Start is called before the first frame update
     void Start()
     {
-        RB = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animation>();
     }
 
     // Update is called once per frame
@@ -27,6 +35,20 @@ public class PlayerMovement : MonoBehaviour
     
     void FixedUpdate()
     {
-        RB.MovePosition(RB.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        movingLeft();
+        
     }
+
+    private void movingLeft()
+    {
+        if (movement.x > 0)
+        {
+            
+            walkingLeftCheck = true;
+            anim.Play("waking left");
+        }
+    }
+
 }
